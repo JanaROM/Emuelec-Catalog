@@ -1,0 +1,137 @@
+EMUELEC FREE GAMES CATALOG - INSTALL GUIDE
+==========================================
+
+WHAT IT IS
+A catalog of free, public-domain and homebrew games that lives inside EmuELEC (menu: Ports > Catalog).
+You pick a console, pick a game, and it downloads straight to the right console folder. The menu
+refreshes by itself and the game shows up like any other. Each game shows its size before you download it.
+Only free games: public domain, freeware, or homebrew shared by the author. Nothing commercial.
+
+WHAT YOU NEED
+- EmuELEC 4.x (tested on EmuELEC 4.8, Beelink GT King, 1080p).
+- Internet on the EmuELEC device (it downloads the lists and the games).
+- Some free space on the games partition (most games are under 1 MB; the biggest are about 15 MB).
+
+INSTALL - OPTION A: ONE FILE (no computer skills needed)
+1. Get the file "Install Catalog.sh" from the project page on GitHub:
+   https://github.com/jfalvitez/Emuelec-free-games
+   Click the file, then click the "Download raw file" icon. Keep the name exactly "Install Catalog.sh".
+   Do not open and re-save it in Notepad. If your browser changes the name (for example to
+   "Install%20Catalog.sh"), rename it back to "Install Catalog.sh".
+2. Copy it into the folder "ports_scripts" of the games partition of your EmuELEC:
+   - Take the microSD out and plug it into a PC. The games partition is usually called EEROMS.
+     Copy the file into its "ports_scripts" folder.
+   - Or, with the EmuELEC on the same network, open \\EMUELEC\roms\ports_scripts in Windows Explorer
+     (this only works if network sharing is on).
+3. Put the card back. On the EmuELEC: Start > Game Settings > Update Gamelists
+   (or restart EmulationStation).
+4. Open Ports > Install Catalog and wait a few minutes. The screen shows "Installing catalog...".
+5. The menu restarts by itself. Open Ports > Catalog.
+
+INSTALL - OPTION B: ONE LINE (for people who use SSH)
+Connect to the EmuELEC (ssh root@<its IP>, default password: emuelec) and run:
+
+   curl -L -s https://raw.githubusercontent.com/jfalvitez/Emuelec-free-games/refs/heads/main/instalar.sh | bash
+
+(If SSH says "Permission denied", turn off any VPN on your computer.)
+
+HOW TO USE IT
+- Ports > Catalog > pick a console > pick a game. The size is shown in the name, for example "Hilda (256 KB)".
+- While it downloads you will see "Wait, downloading..." and a percentage. When it finishes you will see
+  "Download complete!" and the menu restarts. The game is now in its console, ready to play.
+- Games you already have are marked [Installed].
+- To free space: Ports > Catalog > "Installed - select one to DELETE it" > pick a game. It is deleted at once.
+- Ports > Catalog > Update Catalog downloads the newest game lists and scripts.
+
+WHAT THE INSTALLER CHANGES
+- It creates /storage/catalog (scripts and lists) and the folder ports_scripts/Catalog (the menu entries).
+- It sets "Show Folders" to "always" in EmulationStation so the catalog is organised by console.
+  This is a global menu setting. To undo it, set Show Folders back to "never" in the menu settings.
+- Your own games and settings are not touched.
+
+UNINSTALL
+Ports > Uninstall Catalog (get the file "Uninstall Catalog.sh" the same way as the installer).
+It removes the catalog but keeps every game you downloaded.
+
+IF SOMETHING GOES WRONG
+- "Install Catalog" is not in Ports: run Start > Game Settings > Update Gamelists or restart the menu.
+- "Install failed": check the internet connection and try again. Details are in /storage/catalog_install.log.
+- "No internet connection" / "Download link not working": the game's host may be down or have moved the file.
+  Try Update Catalog later.
+- Everything looks mixed in one long list: in the menu settings set Show Folders to "always".
+- Other problems: connect by SSH and read /storage/catalog/log.txt (it explains what happened with each download).
+
+CREDITS
+The games belong to their authors and are downloaded from the places where the authors share them,
+mainly the RetroBrews collection (github.com/retrobrews), Zophar's Domain (public-domain section) and
+the N64brew community. If you make a game and want it removed from the catalog, tell the maintainer.
+
+
+==========================================
+CATALOGO DE JUEGOS LIBRES PARA EMUELEC - GUIA DE INSTALACION
+==========================================
+
+QUE ES
+Un catalogo de juegos libres, de dominio publico y homebrew que vive dentro de EmuELEC (menu: Ports > Catalog).
+Eliges una consola, eliges un juego y se descarga directo a la carpeta de esa consola. El menu se actualiza
+solo y el juego aparece como cualquier otro. Cada juego muestra su tamano antes de descargarlo.
+Solo juegos libres: dominio publico, freeware o homebrew que el autor deja compartir. Nada comercial.
+
+QUE NECESITAS
+- EmuELEC 4.x (probado en EmuELEC 4.8, Beelink GT King, 1080p).
+- Internet en el EmuELEC (baja las listas y los juegos).
+- Algo de espacio libre en la particion de juegos (casi todos pesan menos de 1 MB; el mas grande, unos 15 MB).
+
+INSTALAR - OPCION A: UN SOLO ARCHIVO (sin conocimientos tecnicos)
+1. Consigue el archivo "Install Catalog.sh" en la pagina del proyecto en GitHub:
+   https://github.com/jfalvitez/Emuelec-free-games
+   Pulsa el archivo y luego el icono "Download raw file". Conserva el nombre exacto "Install Catalog.sh".
+   No lo abras ni lo guardes de nuevo con el Bloc de notas. Si el navegador cambia el nombre (por ejemplo a
+   "Install%20Catalog.sh"), vuelve a ponerle "Install Catalog.sh".
+2. Copialo en la carpeta "ports_scripts" de la particion de juegos de tu EmuELEC:
+   - Saca la microSD y ponla en una PC. La particion de juegos suele llamarse EEROMS.
+     Copia el archivo en su carpeta "ports_scripts".
+   - O, con el EmuELEC en la misma red, abre \\EMUELEC\roms\ports_scripts en el Explorador de Windows
+     (solo funciona si el uso compartido de red esta activado).
+3. Devuelve la tarjeta. En el EmuELEC: Start > Game Settings > Update Gamelists
+   (o reinicia EmulationStation).
+4. Abre Ports > Install Catalog y espera unos minutos. La pantalla dice "Installing catalog...".
+5. El menu se reinicia solo. Abre Ports > Catalog.
+
+INSTALAR - OPCION B: UNA LINEA (para quien usa SSH)
+Conectate al EmuELEC (ssh root@<su IP>, clave por defecto: emuelec) y ejecuta:
+
+   curl -L -s https://raw.githubusercontent.com/jfalvitez/Emuelec-free-games/refs/heads/main/instalar.sh | bash
+
+(Si SSH dice "Permission denied", apaga cualquier VPN en tu computadora.)
+
+COMO USARLO
+- Ports > Catalog > elige una consola > elige un juego. El tamano aparece en el nombre, por ejemplo "Hilda (256 KB)".
+- Mientras descarga veras "Wait, downloading..." y un porcentaje. Al terminar veras "Download complete!"
+  y el menu se reinicia. El juego ya esta en su consola, listo para jugar.
+- Los juegos que ya tienes aparecen marcados con [Installed].
+- Para liberar espacio: Ports > Catalog > "Installed - select one to DELETE it" > elige un juego. Se borra de inmediato.
+- Ports > Catalog > Update Catalog baja las listas de juegos y los scripts mas nuevos.
+
+QUE CAMBIA EL INSTALADOR
+- Crea /storage/catalog (scripts y listas) y la carpeta ports_scripts/Catalog (las entradas del menu).
+- Pone "Show Folders" en "always" en EmulationStation para que el catalogo se vea ordenado por consola.
+  Es un ajuste global del menu. Para deshacerlo, vuelve a poner Show Folders en "never" en los ajustes del menu.
+- Tus juegos y tus ajustes no se tocan.
+
+DESINSTALAR
+Ports > Uninstall Catalog (consigue el archivo "Uninstall Catalog.sh" igual que el instalador).
+Quita el catalogo pero conserva todos los juegos que descargaste.
+
+SI ALGO FALLA
+- "Install Catalog" no aparece en Ports: haz Start > Game Settings > Update Gamelists o reinicia el menu.
+- "Install failed": revisa la conexion a internet e intenta otra vez. Los detalles estan en /storage/catalog_install.log.
+- "No internet connection" / "Download link not working": puede que la pagina del juego este caida o haya
+  movido el archivo. Prueba Update Catalog mas tarde.
+- Todo se ve mezclado en una lista larga: en los ajustes del menu pon Show Folders en "always".
+- Otros problemas: conectate por SSH y lee /storage/catalog/log.txt (explica que paso con cada descarga).
+
+CREDITOS
+Los juegos pertenecen a sus autores y se descargan de los sitios donde ellos los comparten, sobre todo la
+coleccion RetroBrews (github.com/retrobrews), Zophar's Domain (seccion de dominio publico) y la comunidad
+N64brew. Si eres autor de un juego y quieres que lo quitemos del catalogo, avisa a quien mantiene el proyecto.
