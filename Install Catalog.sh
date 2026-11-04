@@ -2,7 +2,7 @@
 # Free games catalog - one-file installer.
 # Copy this file to the ports_scripts folder of your EmuELEC (the "roms" share), update the game lists,
 # then open it from Ports. It downloads the latest installer from GitHub and runs it.
-BASE="${CATALOG_BASE:-https://raw.githubusercontent.com/jfalvitez/Emuelec-free-games/refs/heads/main}"
+BASE="${CATALOG_BASE:-https://raw.githubusercontent.com/JanaROM/Emuelec-Catalog/refs/heads/main}"
 WORK=/tmp/catalog_setup
 rm -rf "$WORK"; mkdir -p "$WORK"
 

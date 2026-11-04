@@ -14,7 +14,7 @@ WHAT YOU NEED
 
 INSTALL - OPTION A: ONE FILE (no computer skills needed)
 1. Get the file "Install Catalog.sh" from the project page on GitHub:
-   https://github.com/jfalvitez/Emuelec-free-games
+   https://github.com/JanaROM/Emuelec-Catalog
    Click the file, then click the "Download raw file" icon. Keep the name exactly "Install Catalog.sh".
    Do not open and re-save it in Notepad. If your browser changes the name (for example to
    "Install%20Catalog.sh"), rename it back to "Install Catalog.sh".
@@ -31,7 +31,7 @@ INSTALL - OPTION A: ONE FILE (no computer skills needed)
 INSTALL - OPTION B: ONE LINE (for people who use SSH)
 Connect to the EmuELEC (ssh root@<its IP>, default password: emuelec) and run:
 
-   curl -L -s https://raw.githubusercontent.com/jfalvitez/Emuelec-free-games/refs/heads/main/instalar.sh | bash
+   curl -L -s https://raw.githubusercontent.com/JanaROM/Emuelec-Catalog/refs/heads/main/instalar.sh | bash
 
 (If SSH says "Permission denied", turn off any VPN on your computer.)
 
@@ -40,8 +40,8 @@ HOW TO USE IT
 - While it downloads you will see "Wait, downloading..." and a percentage. When it finishes you will see
   "Download complete!" and the menu restarts. The game is now in its console, ready to play.
 - Games you already have are marked [Installed].
-- To free space: Ports > Catalog > "Installed - select one to DELETE it" > pick a game. It is deleted at once.
-- Ports > Catalog > Update Catalog downloads the newest game lists and scripts.
+- To free space: Ports > Catalog > "0 - Catalog Tools" > "Installed games - select one to DELETE it" > pick a game. It is deleted at once.
+- Ports > Catalog > "0 - Catalog Tools" > Update Catalog downloads the newest game lists and scripts.
 
 WHAT THE INSTALLER CHANGES
 - It creates /storage/catalog (scripts and lists) and the folder ports_scripts/Catalog (the menu entries).
@@ -84,7 +84,7 @@ QUE NECESITAS
 
 INSTALAR - OPCION A: UN SOLO ARCHIVO (sin conocimientos tecnicos)
 1. Consigue el archivo "Install Catalog.sh" en la pagina del proyecto en GitHub:
-   https://github.com/jfalvitez/Emuelec-free-games
+   https://github.com/JanaROM/Emuelec-Catalog
    Pulsa el archivo y luego el icono "Download raw file". Conserva el nombre exacto "Install Catalog.sh".
    No lo abras ni lo guardes de nuevo con el Bloc de notas. Si el navegador cambia el nombre (por ejemplo a
    "Install%20Catalog.sh"), vuelve a ponerle "Install Catalog.sh".
@@ -101,7 +101,7 @@ INSTALAR - OPCION A: UN SOLO ARCHIVO (sin conocimientos tecnicos)
 INSTALAR - OPCION B: UNA LINEA (para quien usa SSH)
 Conectate al EmuELEC (ssh root@<su IP>, clave por defecto: emuelec) y ejecuta:
 
-   curl -L -s https://raw.githubusercontent.com/jfalvitez/Emuelec-free-games/refs/heads/main/instalar.sh | bash
+   curl -L -s https://raw.githubusercontent.com/JanaROM/Emuelec-Catalog/refs/heads/main/instalar.sh | bash
 
 (Si SSH dice "Permission denied", apaga cualquier VPN en tu computadora.)
 
@@ -110,8 +110,8 @@ COMO USARLO
 - Mientras descarga veras "Wait, downloading..." y un porcentaje. Al terminar veras "Download complete!"
   y el menu se reinicia. El juego ya esta en su consola, listo para jugar.
 - Los juegos que ya tienes aparecen marcados con [Installed].
-- Para liberar espacio: Ports > Catalog > "Installed - select one to DELETE it" > elige un juego. Se borra de inmediato.
-- Ports > Catalog > Update Catalog baja las listas de juegos y los scripts mas nuevos.
+- Para liberar espacio: Ports > Catalog > "0 - Catalog Tools" > "Installed games - select one to DELETE it" > elige un juego. Se borra de inmediato.
+- Ports > Catalog > "0 - Catalog Tools" > Update Catalog baja las listas de juegos y los scripts mas nuevos.
 
 QUE CAMBIA EL INSTALADOR
 - Crea /storage/catalog (scripts y listas) y la carpeta ports_scripts/Catalog (las entradas del menu).
