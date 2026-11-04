@@ -1,6 +1,6 @@
 #!/bin/bash
 # Free games catalog installer for EmuELEC
-BASE="https://raw.githubusercontent.com/jfalvitez/Emuelec-free-games/refs/heads/main"
+BASE="https://raw.githubusercontent.com/JanaROM/Emuelec-Catalog/refs/heads/main"
 DIR="/storage/catalog"
 
 # Remove the previous install (old Spanish-named folders). Downloaded games are not touched.
@@ -2688,7 +2688,8 @@ import shutil
 from common import *
 
 ROOT = os.path.join(ROMS, "ports_scripts", "Catalog")
-DELETE_DIR = "Installed - select one to DELETE it"
+TOOLS = "0 - Catalog Tools"          # starts with a digit so it always sorts before the consoles
+DELETE_DIR = "Installed games - select one to DELETE it"
 
 shutil.rmtree(ROOT, ignore_errors=True)
 os.makedirs(ROOT, exist_ok=True)
@@ -2722,10 +2723,10 @@ for path in list_files():
         total += 1
         if have:
             installed += 1
-            write_entry(os.path.join(ROOT, DELETE_DIR), "%s - %s.sh" % (console, label),
+            write_entry(os.path.join(ROOT, TOOLS, DELETE_DIR), "%s - %s.sh" % (console, label),
                         "python3 %s/download.py delete %s %s" % (DIR, system, slug(rec["label"])))
 
-write_entry(ROOT, "Update Catalog.sh", "python3 %s/update.py" % DIR)
+write_entry(os.path.join(ROOT, TOOLS), "Update Catalog.sh", "python3 %s/update.py" % DIR)
 print("%d entries created in %s (%d installed, %d invalid lines skipped)" % (total, ROOT, installed, skipped))
 PYEOF
 
